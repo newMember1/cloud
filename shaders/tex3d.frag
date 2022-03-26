@@ -7,6 +7,8 @@ out vec4 gColor;
 
 void main()
 {
-    gColor = texture(tex3D, OriPos);
-    // gColor = vec4(0.2, 0.3, 0.5, 1.0);
+    vec4 texColor = texture(tex3D, OriPos);
+    if(texColor.a < 0.1)
+        discard;
+    gColor = texColor;
 }

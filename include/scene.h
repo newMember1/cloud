@@ -13,12 +13,14 @@ class Scene
 {
 public:
     Scene();
-    void init();
-    void setupTex3d();
-    void computeTex3d();
     void draw();
 
 private:
+    void init();
+    void initCubeDatas();
+    void pushQuad(float xmin, float xmax, float zmin, float zmax, float y);
+    void setupTex3d();
+    void computeTex3d();
     Shader renderShader{"../shaders/tex3d.vert", "../shaders/tex3d.frag"};
     Shader computeShader{"../shaders/tex3d.comp"};
 
@@ -35,9 +37,9 @@ private:
 
     unsigned int tex3D;
 
-    unsigned int texWidth = 128;;
-    unsigned int texHeight = 128;
-    unsigned int texDepth = 128;
+    unsigned int texWidth = 64;
+    unsigned int texHeight = 64;
+    unsigned int texDepth = 64;
 
     std::vector<float> cubeVertices = {
     // positions          // normals           // texture coords

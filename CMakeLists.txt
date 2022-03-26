@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(projectName "texture3d")
+set(projectName "volume-cloud")
 set(ROOT_DIR ${CMAKE_SOURCE_DIR})
 
 message(${projectName})
